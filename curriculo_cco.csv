@@ -1,36 +1,36 @@
 CODIGO,NOME,TIPO,AREA,PERIODO,OFERTA,CH,PREREQUISITOS,EQUIVALENTES
-XDES01,Fundamentos de Programação,OBRIGATORIA,Desenvolvimento e Eng. de Software,1,SEMESTRAL,64,,COM110|ECOP11A|ECOP01|ECOP11
-XDES02,Programação Orientada a Objetos,OBRIGATORIA,Desenvolvimento e Eng. de Software,3,SEMESTRAL,64,XDES01,COM220|ECOP13A|ECOP03|ECOP13
-XDES03,Programação Web,OBRIGATORIA,Desenvolvimento e Eng. de Software,4,SEMESTRAL,64,XDES02,COM222|ECOX05
-XDES04,Engenharia de Software I,OBRIGATORIA,Desenvolvimento e Eng. de Software,3,SEMESTRAL,64,,COM210|ECOT01A|ECOT11A|ECOT01|ECOT11
-CDES05,Programação Lógica e Funcional,OBRIGATORIA,Desenvolvimento e Eng. de Software,4,SEMESTRAL,64,XMAC01,CIC131
-XPAD01,Banco de Dados I,OBRIGATORIA,Persistência e Análise de Dados,4,SEMESTRAL,64,CTCO02,COM230|ECOT03A|ECOT13A|ECOT03|ECOT13
-XMCO01,Inteligência Artificial,OBRIGATORIA,Metodologias Comp. e Otimização,5,SEMESTRAL,64,XMAC02,CIC260|SIN260|XMACO01
-CMCO05,Introdução à Computação Visual,OBRIGATORIA,Metodologias Comp. e Otimização,5,SEMESTRAL,64,XMAC02|XDES02,CIC271|ECOE19
-XRSC01,Redes de Computadores,OBRIGATORIA,Redes e Sistemas Computacionais,4,SEMESTRAL,64,CRSC02,COM240|TELC03A|TELC13A|TELC03|TELC13
-CRSC02,Sistemas Operacionais,OBRIGATORIA,Redes e Sistemas Computacionais,3,SEMESTRAL,64,CTCO01|CRSC04,COM120|ECOS01A|ECOS11A|ECOS01
-CRSC03,Arquitetura de Computadores I,OBRIGATORIA,Redes e Sistemas Computacionais,1,SEMESTRAL,64,,CIC120|ELTD01A|ELTD11A|ELTD01|ELTD11
-CRSC04,Arquitetura de Computadores II,OBRIGATORIA,Redes e Sistemas Computacionais,2,SEMESTRAL,64,CRSC03,CIC121|ECOX01
-CRSC05,Sistemas Embarcados,OBRIGATORIA,Redes e Sistemas Computacionais,4,SEMESTRAL,64,CRSC02,ECOP04|ECOP14
-CTCO01,Algoritmos e Estruturas de Dados I,OBRIGATORIA,Teoria da Computação,2,SEMESTRAL,64,XDES01,COM111|STCO01|ECOP02A|ECOP02|ECOP12
-CTCO02,Algoritmos e Estruturas de Dados II,OBRIGATORIA,Teoria da Computação,3,SEMESTRAL,64,CTCO01,COM112|STCO02
-CTCO03,Análise e Projeto Orientados a Objeto,OBRIGATORIA,Teoria da Computação,4,SEMESTRAL,64,XDES02,COM221
-CTCO04,Projeto e Análise de Algoritmos,OBRIGATORIA,Teoria da Computação,4,SEMESTRAL,64,CTCO02,CIC110
-CTCO05,Teoria da Computação,OBRIGATORIA,Teoria da Computação,6,SEMESTRAL,64,CTCO04|CDES05,CIC132
-CTCO06,Compiladores,OBRIGATORIA,Teoria da Computação,7,SEMESTRAL,64,CTCO05,CIC220
-MAT00A,Cálculo A,OBRIGATORIA,Matemática da Computação,1,SEMESTRAL,64,,MAT001
-MAT00B,Cálculo B,OBRIGATORIA,Matemática da Computação,2,SEMESTRAL,64,MAT00A,MAT002
-XMAC01,Matemática Discreta,OBRIGATORIA,Matemática da Computação,1,SEMESTRAL,64,,MAT015|MAT057|MAT017|ECOM01A|ECOM11A|ECOM01|ECOM11
-XMAC02,Métodos Matemáticos para Análise de Dados,OBRIGATORIA,Matemática da Computação,3,SEMESTRAL,64,MAT00A|XMAC01|CTCO01,MAT013
-CMAC03,Algoritmos em Grafos,OBRIGATORIA,Matemática da Computação,3,SEMESTRAL,64,CTCO01,SIN110|SMAC03
-CMAC04,Modelagem Computacional,OBRIGATORIA,Matemática da Computação,2,SEMESTRAL,64,MAT00A,CIC510
-CMAC05,Cálculo Numérico para Computação,OBRIGATORIA,Matemática da Computação,4,SEMESTRAL,64,MAT00B,CIC250|MAT012
+XDES01,Fundamentos de Programação,OBRIGATORIA,Desenvolvimento e Eng. de Software,1,1°SEMESTRE,64,,COM110|ECOP11A|ECOP01|ECOP11
+XDES02,Programação Orientada a Objetos,OBRIGATORIA,Desenvolvimento e Eng. de Software,3,ANUAL,64,XDES01,COM220|ECOP13A|ECOP03|ECOP13
+XDES03,Programação Web,OBRIGATORIA,Desenvolvimento e Eng. de Software,4,ANUAL,64,XDES02,COM222|ECOX05
+XDES04,Engenharia de Software I,OBRIGATORIA,Desenvolvimento e Eng. de Software,3,ANUAL,64,,COM210|ECOT01A|ECOT11A|ECOT01|ECOT11
+CDES05,Programação Lógica e Funcional,OBRIGATORIA,Desenvolvimento e Eng. de Software,4,2°SEMESTRE,64,XMAC01,CIC131
+XPAD01,Banco de Dados I,OBRIGATORIA,Persistência e Análise de Dados,4,ANUAL,64,CTCO02,COM230|ECOT03A|ECOT13A|ECOT03|ECOT13
+XMCO01,Inteligência Artificial,OBRIGATORIA,Metodologias Comp. e Otimização,5,ANUAL,64,XMAC02,CIC260|SIN260|XMACO01
+CMCO05,Introdução à Computação Visual,OBRIGATORIA,Metodologias Comp. e Otimização,5,1°SEMESTRE,64,XMAC02|XDES02,CIC271|ECOE19
+XRSC01,Redes de Computadores,OBRIGATORIA,Redes e Sistemas Computacionais,4,ANUAL,64,CRSC02,COM240|TELC03A|TELC13A|TELC03|TELC13
+CRSC02,Sistemas Operacionais,OBRIGATORIA,Redes e Sistemas Computacionais,3,ANUAL,64,CTCO01|CRSC04,COM120|ECOS01A|ECOS11A|ECOS01
+CRSC03,Arquitetura de Computadores I,OBRIGATORIA,Redes e Sistemas Computacionais,1,1°SEMESTRE,64,,CIC120|ELTD01A|ELTD11A|ELTD01|ELTD11
+CRSC04,Arquitetura de Computadores II,OBRIGATORIA,Redes e Sistemas Computacionais,2,2°SEMESTRE,64,CRSC03,CIC121|ECOX01
+CRSC05,Sistemas Embarcados,OBRIGATORIA,Redes e Sistemas Computacionais,4,ANUAL,64,CRSC02,ECOP04|ECOP14
+CTCO01,Algoritmos e Estruturas de Dados I,OBRIGATORIA,Teoria da Computação,2,1°SEMESTRE,64,XDES01,COM111|STCO01|ECOP02A|ECOP02|ECOP12
+CTCO02,Algoritmos e Estruturas de Dados II,OBRIGATORIA,Teoria da Computação,3,2°SEMESTRE,64,CTCO01,COM112|STCO02
+CTCO03,Análise e Projeto Orientados a Objeto,OBRIGATORIA,Teoria da Computação,4,1°SEMESTRE,64,XDES02,COM221
+CTCO04,Projeto e Análise de Algoritmos,OBRIGATORIA,Teoria da Computação,4,2°SEMESTRE,64,CTCO02,CIC110
+CTCO05,Teoria da Computação,OBRIGATORIA,Teoria da Computação,6,1°SEMESTRE,64,CTCO04|CDES05,CIC132
+CTCO06,Compiladores,OBRIGATORIA,Teoria da Computação,7,2°SEMESTRE,64,CTCO05,CIC220
+MAT00A,Cálculo A,OBRIGATORIA,Matemática da Computação,1,ANUAL,64,,MAT001
+MAT00B,Cálculo B,OBRIGATORIA,Matemática da Computação,2,ANUAL,64,MAT00A,MAT002
+XMAC01,Matemática Discreta,OBRIGATORIA,Matemática da Computação,1,ANUAL,64,,MAT015|MAT057|MAT017|ECOM01A|ECOM11A|ECOM01|ECOM11
+XMAC02,Métodos Matemáticos para Análise de Dados,OBRIGATORIA,Matemática da Computação,3,ANUAL,64,MAT00A|XMAC01|CTCO01,MAT013
+CMAC03,Algoritmos em Grafos,OBRIGATORIA,Matemática da Computação,3,ANUAL,64,CTCO01,SIN110|SMAC03
+CMAC04,Modelagem Computacional,OBRIGATORIA,Matemática da Computação,2,2°SEMESTRE,64,MAT00A,CIC510
+CMAC05,Cálculo Numérico para Computação,OBRIGATORIA,Matemática da Computação,4,2°SEMESTRE,64,MAT00B,CIC250|MAT012
 XAHC01,Computação e Sociedade,OBRIGATORIA,Aspectos Humanos em Computação,7,ANUAL,64,,COM312
-XAHC02,Interação Humano-Computador,OBRIGATORIA,Aspectos Humanos em Computação,6,SEMESTRAL,64,XDES03|XDES04,COM213
+XAHC02,Interação Humano-Computador,OBRIGATORIA,Aspectos Humanos em Computação,6,2°SEMESTRE,64,XDES03|XDES04,COM213
 XAHC03,Metodologia Científica,OBRIGATORIA,Aspectos Humanos em Computação,7,ANUAL,64,CTCO04|XRSC01,COM310
-CAHC04,Projeto Integrado,OBRIGATORIA,Aspectos Humanos em Computação,1,SEMESTRAL,32,,
-TCC1,Trabalho de Conclusão de Curso 1,TCC,TCC,7,SEMESTRAL,140,XAHC03,
-TCC2,Trabalho de Conclusão de Curso 2,TCC,TCC,8,SEMESTRAL,210,TCC1,
+CAHC04,Projeto Integrado,OBRIGATORIA,Aspectos Humanos em Computação,1,2°SEMESTRE,32,,
+TCC1,Trabalho de Conclusão de Curso 1,TCC,TCC,7,1°SEMESTRE,140,XAHC03,
+TCC2,Trabalho de Conclusão de Curso 2,TCC,TCC,8,2°SEMESTRE,210,TCC1,
 SDES05,Engenharia de Software II,OPTATIVA,Desenvolvimento e Eng. de Software,5|7,ANUAL,64,XDES04,COM211
 SDES06,Gerência de Projetos de Software,OPTATIVA,Desenvolvimento e Eng. de Software,6|8,ANUAL,64,XDES04,COM212
 SDES07,Desenvolvimento de Sistemas Web,OPTATIVA,Desenvolvimento e Eng. de Software,5|7,ANUAL,64,XDES04|XPAD01|XDES03,SIN412
