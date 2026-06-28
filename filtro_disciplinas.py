@@ -1,4 +1,5 @@
-""""
+"""
+filtrar_disciplinas.py
 ======================
 Passo 3 do pipeline de recomendação de matrícula.
 
@@ -6,8 +7,10 @@ A partir do DAG do currículo e do histórico processado do aluno, determina
 quais disciplinas estão disponíveis para matrícula no próximo semestre.
 
 Uma disciplina é considerada DISPONÍVEL se satisfaz TODAS as condições:
-    1. Está na oferta do semestre corrente (SEMESTRAL sempre; ANUAL só em anos
-       ímpares, i.e., semestres 1 e 7, ou pares, 2 e 8 — veja `oferta_ativa`).
+    1. Está na oferta do semestre corrente:
+         1°SEMESTRE → apenas em semestres .1
+         2°SEMESTRE → apenas em semestres .2
+         ANUAL      → em qualquer semestre (ofertada o ano todo)
     2. O aluno ainda não foi aprovado nela (código não está em `aprovadas`
        nem possui um equivalente já aprovado).
     3. Todos os pré-requisitos diretos estão satisfeitos: cada pré-req foi
@@ -80,23 +83,34 @@ def oferta_ativa(disc: Disciplina, semestre_atual: str) -> bool:
     """
     Retorna True se a disciplina está sendo ofertada no semestre informado.
 
-    Regras:
-        SEMESTRAL → sempre ofertada (todo semestre).
-        ANUAL     → ofertada apenas em semestres ímpares (1º sem. do ano).
-        Qualquer outro valor de `oferta` → conservadoramente, retorna False
-        com aviso.
-    """
-    oferta = disc.oferta.upper().strip()
+    Valores do campo OFERTA no currículo CCO:
+        1°SEMESTRE → ofertada apenas em semestres .1 (primeiro semestre do ano).
+        2°SEMESTRE → ofertada apenas em semestres .2 (segundo semestre do ano).
+        ANUAL      → ofertada em qualquer semestre do ano.
 
-    if oferta == "SEMESTRAL":
-        return True
+    Qualquer outro valor gera aviso e a disciplina é excluída por segurança.
+    """
+    # Normaliza: remove °/º para comparação robusta ('1°SEMESTRE' → '1SEMESTRE')
+    oferta = (
+        disc.oferta
+        .upper()
+        .strip()
+        .replace("°", "")
+        .replace("º", "")
+    )
 
     if oferta == "ANUAL":
-        num = _numero_semestre(semestre_atual)
-        # Ofertada apenas no 1º semestre de cada ano (semestre .1)
+        return True
+
+    num = _numero_semestre(semestre_atual)
+
+    if oferta == "1SEMESTRE":
         return num == 1
 
-    # Caso desconhecido — por segurança, não oferta
+    if oferta == "2SEMESTRE":
+        return num == 2
+
+    # Valor desconhecido — por segurança, não oferta
     print(
         f"[AVISO] Tipo de oferta desconhecido para {disc.codigo}: "
         f"'{disc.oferta}'. Disciplina excluída da filtragem."
