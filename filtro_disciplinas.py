@@ -257,7 +257,7 @@ if __name__ == "__main__":
 
     # ── Carrega dados ────────────────────────────────────────────────────────
     df_curr = pd.read_csv(os.path.join(BASE, "curriculo_cco.csv"))
-    df_hist = pd.read_csv(os.path.join(BASE, "historico_CCO-1.csv"))
+    df_hist = pd.read_csv(os.path.join(BASE, "historico_CCO-4.csv"))
 
     # ── Constrói DAG e processa histórico ────────────────────────────────────
     dag   = construir_dag(df_curr)
