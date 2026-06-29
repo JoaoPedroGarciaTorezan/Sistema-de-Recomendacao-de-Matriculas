@@ -105,6 +105,10 @@ def processar_historico(
     mask_semestre_real = df_apr["semestre"] != "TRANSFERENCIA"
     df_semestres_reais = df_apr[mask_semestre_real]
 
+    # Garante que ch é numérico — o parse_historico lê tudo como string
+    df_semestres_reais = df_semestres_reais.copy()
+    df_semestres_reais["ch"] = pd.to_numeric(df_semestres_reais["ch"], errors="coerce").fillna(0)
+
     ch_por_semestre: dict[str, int] = (
         df_semestres_reais
         .groupby("semestre")["ch"]
@@ -180,7 +184,7 @@ if __name__ == "__main__":
 
     BASE = os.path.dirname(__file__)
 
-    df_hist = pd.read_csv(os.path.join(BASE, "historico_CCO-5.csv"))
+    df_hist = pd.read_csv(os.path.join(BASE, "historico_CCO-3.csv"))
     df_curr = pd.read_csv(os.path.join(BASE, "curriculo_cco.csv"))
 
     aluno = processar_historico(df_hist, df_curr)

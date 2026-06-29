@@ -12,6 +12,7 @@ Exemplo:
 import re
 import sys
 import csv
+import pandas as pd
 import subprocess
 from pathlib import Path
 
@@ -161,6 +162,15 @@ def salvar_csv(registros: list[dict], caminho_saida: str):
         writer.writeheader()
         writer.writerows(registros)
     print(f"✓ CSV salvo em: {caminho_saida}  ({len(registros)} registros)")
+
+def parsear_para_dataframe(caminho_pdf: str) -> pd.DataFrame:
+    """
+    Lê o PDF do histórico e retorna um DataFrame diretamente em memória.
+    Não salva nenhum arquivo em disco.
+    """
+    linhas = extrair_texto_pdf(caminho_pdf)
+    registros = parse_historico(linhas)
+    return pd.DataFrame(registros)
 
 
 def main():

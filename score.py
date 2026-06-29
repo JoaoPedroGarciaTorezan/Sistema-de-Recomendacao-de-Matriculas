@@ -166,22 +166,13 @@ def _contribuicao_fracional(
 
     # Conta pré-reqs já satisfeitos (excluindo a própria candidata, que ainda
     # não foi cursada — mas incluímos +1 para representar sua contribuição)
-    ja_satisfeitos = sum(
-        1 for p in disc_x.prereqs
-        if p in aprovadas or p == candidata
-    )
-
     # +1 garante que cursando `candidata` o numerador cresce
-    # Mas evita dupla contagem caso `candidata` já esteja em `aprovadas`
-    if candidata in aprovadas:
-        contribuicao = ja_satisfeitos
-    else:
-        # candidata ainda não cursada; +1 representa que ela será cursada
-        prereqs_sem_candidata = sum(
-            1 for p in disc_x.prereqs
-            if p in aprovadas
-        )
-        contribuicao = prereqs_sem_candidata + 1
+    
+    prereqs_sem_candidata = sum(
+        1 for p in disc_x.prereqs
+        if p in aprovadas
+    )
+    contribuicao = prereqs_sem_candidata + 1
 
     return min(contribuicao / total_prereqs, 1.0)
 

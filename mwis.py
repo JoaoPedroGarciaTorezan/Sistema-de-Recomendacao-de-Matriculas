@@ -400,7 +400,7 @@ if __name__ == "__main__":
     BASE = os.path.dirname(__file__)
 
     # CSV com a coluna HORARIOS
-    df_curr = pd.read_csv(os.path.join(BASE, "curriculo_cco_HORARIOS.csv"))
+    df_curr = pd.read_csv(os.path.join(BASE, "curriculo_CCO_HORARIOS.csv"))
     df_hist = pd.read_csv(os.path.join(BASE, "historico_CCO-3.csv"))
 
     SEMESTRE = "2025.2"
