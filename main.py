@@ -16,6 +16,7 @@ Módulos utilizados:
     filtro_disciplinas → filtra disciplinas candidatas
     score            → calcula score de cada candidata
     mwis             → seleciona conjunto final (MWIS + restrição de CH)
+    gerar_grafo      → gera PNG do grafo de pré-requisitos com o estado do aluno
 """
 
 from __future__ import annotations
@@ -34,6 +35,7 @@ from read_historico import processar_historico
 from filtro_disciplinas import filtrar_disponiveis
 from score import calcular_scores, calcular_scores_detalhados
 from mwis import resolver_mwis
+from gerar_grafo import gerar_grafo_curriculo
 
 
 # ---------------------------------------------------------------------------
@@ -290,7 +292,27 @@ def main() -> None:
         print(f"[ERRO] Falha no MWIS: {e}")
         sys.exit(1)
 
-    # ── 9. Geração do arquivo de saída ────────────────────────────────────────
+    # ── 9. Geração do grafo (PNG) ─────────────────────────────────────────────
+    caminho_grafo = Path(__file__).parent / f"grafo_{sigla_curso}_{semestre}.png"
+
+    try:
+        gerar_grafo_curriculo(
+            dag           = dag,
+            aluno         = aluno,
+            df_historico  = df_historico,
+            candidatas    = candidatas,
+            resultado     = resultado,
+            nome_curso    = nome_curso,
+            semestre      = semestre,
+            caminho_saida = str(caminho_grafo),
+        )
+        print(f"[OK] Grafo do currículo salvo em: {caminho_grafo}")
+    except Exception as e:
+        # Falha na geração do grafo não deve interromper o pipeline:
+        # a recomendação em texto ainda é o entregável principal.
+        print(f"[AVISO] Não foi possível gerar o grafo: {e}")
+
+    # ── 10. Geração do arquivo de saída ───────────────────────────────────────
     print()
     print("─" * 62)
 
