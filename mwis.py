@@ -34,6 +34,7 @@ Uso como script:
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass, field
 from itertools import combinations
 
@@ -408,12 +409,19 @@ if __name__ == "__main__":
         CSV_PATH = "curriculo_CCO_HORARIOS.csv"   # ajuste o caminho conforme necessário
     else:
         CSV_PATH = "curriculo_SIN_HORARIOS.csv"   # ajuste o caminho conforme necessário
-        
-    # CSV com a coluna HORARIOS
-    df_curr = pd.read_csv(os.path.join(BASE, CSV_PATH))
-    df_hist = pd.read_csv(os.path.join(BASE, "dataset/historico_SIN-5.csv"))
-
-    SEMESTRE = "2025.1"
+    
+    HIST_PATH = input("Digite o caminho do historico.csv gerado por parse_historico.py: ")
+    
+    df_curr = pd.read_csv(os.path.join(BASE, CSV_PATH))  
+    df_hist = pd.read_csv(os.path.join(BASE, HIST_PATH))
+    
+    padrao = r"^\d{4}\.$"
+    while True:
+        SEMESTRE = input("Digite o semestre (ex: 2026.1): ").strip()
+        if re.match(padrao, SEMESTRE):
+            print(f"Sucesso! Semestre {SEMESTRE} gravado.")
+            break
+    print("Formato inválido. Use estritamente AAAA.1 ou AAAA.2.\n")
 
     dag        = construir_dag(df_curr)
     aluno      = processar_historico(df_hist, df_curr)
