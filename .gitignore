@@ -12,6 +12,4 @@ env/
 .idea/
 
 # dataset do professor e historicos dos alunos
-dataset/
 historico_*.csv
-historico_*.pdf
